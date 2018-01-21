@@ -1,6 +1,7 @@
 package com.ealfonso.mvptest.root;
 
 import com.ealfonso.mvptest.login.LoginActivity;
+import com.ealfonso.mvptest.login.LoginModule;
 
 import javax.inject.Singleton;
 
@@ -11,7 +12,7 @@ import dagger.Component;
  */
 
 @Singleton
-@Component(modules = ApplicationModule.class)
+@Component(modules = {ApplicationModule.class, LoginModule.class})
 public interface ApplicationComponent {
 
     void inject(LoginActivity target);
