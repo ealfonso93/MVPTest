@@ -81,4 +81,9 @@ public class LoginActivity extends AppCompatActivity implements LoginActivityMVP
     public void setLastName(String lName) {
         lastName.setText(lName);
     }
+
+    @Override
+    public void showUserSavedMessage() {
+        Toast.makeText(this, "User saved successfully", Toast.LENGTH_SHORT).show();
+    }
 }

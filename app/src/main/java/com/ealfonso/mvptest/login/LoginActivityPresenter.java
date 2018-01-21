@@ -37,7 +37,17 @@ public class LoginActivityPresenter implements LoginActivityMVP.Presenter{
 
         User user = model.getUser();
 
-        if(user == null){
+
+        if(user != null){
+            if(view != null){
+                view.setFirstName(user.getFirstName());
+                view.setLastName(user.getSecondName());
+            }
+        }else{
+            view.showUserNotAvailable();
+        }
+
+        /*if(user == null){
             if(view != null){
                 view.showUserNotAvailable();
             }
@@ -45,6 +55,20 @@ public class LoginActivityPresenter implements LoginActivityMVP.Presenter{
             if(view != null){
                 view.setFirstName(user.getFirstName());
                 view.setLastName(user.getSecondName());
+            }
+        }*/
+    }
+
+    @Override
+    public void saveUser() {
+        if (view != null) {
+            if (view.getFirstName().trim().equals("") || view.getLastName().trim().equals("")) {
+                view.showInputError();
+            } else {
+
+                model.createUser(view.getFirstName(), view.getLastName());
+                view.showUserSavedMessage();
+
             }
         }
     }
