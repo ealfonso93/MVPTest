@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">MVPTest</string>
     <string name="title_activity_main">MainActivity</string>
+
+    <string name="twitch_client_id">buq15li9etri531j1uvjmxklju6xxu</string>
+    <string name="title_activity_twitch">TwitchActivity</string>
 </resources>

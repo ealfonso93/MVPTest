@@ -2,6 +2,7 @@ package com.ealfonso.mvptest.root;
 
 import android.app.Application;
 
+import com.ealfonso.mvptest.http.ApiModule;
 import com.ealfonso.mvptest.login.LoginModule;
 
 /**
@@ -19,6 +20,7 @@ public class BasicApp extends Application {
         component = DaggerApplicationComponent.builder()
                 .applicationModule(new ApplicationModule(this))
                 .loginModule(new LoginModule())
+                .apiModule(new ApiModule())
                 .build();
     }
 
